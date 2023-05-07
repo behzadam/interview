@@ -4,11 +4,8 @@ import { queryClient } from "@/utils/react-query";
 import { useMutation } from "@tanstack/react-query";
 import { Todo } from "../types/todo";
 
-type AddTaskOptions = {
-  data: Todo;
-};
-export const addTask = ({ data }: AddTaskOptions): Promise<Todo> => {
-  return apiClient.post(`${API_URL}/tasks`, data);
+export const addTask = (todo: Todo): Promise<Todo> => {
+  return apiClient.post(`${API_URL}/tasks`, todo);
 };
 
 type UseAddTaskOptions = {

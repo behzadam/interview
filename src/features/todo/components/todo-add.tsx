@@ -6,7 +6,7 @@ import { useAddTask } from "../api/add-task";
 export const TodoAdd = (): JSX.Element => {
   const [openModal, setOpenModal] = useState<boolean>(false);
   const [text, setText] = useState<string>("");
-  const { submit, isSuccess } = useAddTask({
+  const { submit } = useAddTask({
     onSuccess: () => setOpenModal(false),
   });
 
@@ -14,10 +14,8 @@ export const TodoAdd = (): JSX.Element => {
     e.preventDefault();
     if (!text) return;
     submit({
-      data: {
-        id: uuidv4(),
-        text,
-      },
+      id: uuidv4(),
+      text,
     });
   };
 
@@ -33,7 +31,7 @@ export const TodoAdd = (): JSX.Element => {
         <form onSubmit={handleSubmit}>
           <div className="w-full form-control">
             <label className="label">
-              <span className="label-text">Task</span>
+              <span className="label-text">Add Task</span>
             </label>
             <input
               type="text"

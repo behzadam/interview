@@ -11,13 +11,21 @@ export const addTask = ({ data }: AddTaskOptions): Promise<Todo> => {
   return apiClient.post(`${API_URL}/tasks`, data);
 };
 
-export const useAddTask = () => {
-  const { mutate: submit, isLoading } = useMutation({
+type UseAddTaskOptions = {
+  onSuccess?: () => void;
+};
+export const useAddTask = ({ onSuccess }: UseAddTaskOptions) => {
+  const {
+    mutate: submit,
+    isLoading,
+    isSuccess,
+  } = useMutation({
     mutationFn: addTask,
-    onSuccess: (todo) => {
+    onSuccess: () => {
       queryClient.invalidateQueries(["tasks"]);
+      onSuccess?.();
     },
   });
 
-  return { submit, isLoading };
+  return { submit, isLoading, isSuccess };
 };

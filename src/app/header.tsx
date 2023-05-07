@@ -1,7 +1,7 @@
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
-import { Rubik_Moonrocks } from "next/font/google";
+import { Abril_Fatface } from "next/font/google";
 
-const headingFont = Rubik_Moonrocks({
+const headingFont = Abril_Fatface({
   subsets: ["latin"],
   weight: "400",
 });
@@ -12,7 +12,7 @@ export default function Header() {
       <h1
         className={`${headingFont.className} font-bold text-2xl text-cyan-800 dark:text-gray-50`}
       >
-        Enterview!
+        E<span className="dark:text-gray-600">nterview...</span>
       </h1>
       <SignedIn>
         <UserButton />

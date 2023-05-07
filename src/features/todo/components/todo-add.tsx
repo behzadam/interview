@@ -22,7 +22,7 @@ export const TodoAdd = (): JSX.Element => {
   return (
     <>
       <button
-        className="btn btn-accent btn-sm"
+        className="btn btn-primary btn-sm"
         onClick={() => setOpenModal(true)}
       >
         Add

@@ -14,12 +14,9 @@ export const addTask = ({ data }: AddTaskOptions): Promise<Todo> => {
 type UseAddTaskOptions = {
   onSuccess?: () => void;
 };
+
 export const useAddTask = ({ onSuccess }: UseAddTaskOptions) => {
-  const {
-    mutate: submit,
-    isLoading,
-    isSuccess,
-  } = useMutation({
+  const { mutate: submit, isLoading } = useMutation({
     mutationFn: addTask,
     onSuccess: () => {
       queryClient.invalidateQueries(["tasks"]);
@@ -27,5 +24,5 @@ export const useAddTask = ({ onSuccess }: UseAddTaskOptions) => {
     },
   });
 
-  return { submit, isLoading, isSuccess };
+  return { submit, isLoading };
 };

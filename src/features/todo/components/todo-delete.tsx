@@ -19,7 +19,7 @@ export const TodoDelete = ({ id }: Props): JSX.Element => {
         </button>
       </Show>
       <Show when={confirm}>
-        <div className="flex">
+        <div className="flex gap-1">
           <button className="btn btn-xs btn-error" onClick={() => onDelete(id)}>
             Delete
           </button>

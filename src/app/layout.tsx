@@ -1,10 +1,7 @@
 import { ClerkProvider } from "@clerk/nextjs";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "./header";
 import Providers from "./providers";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Interview",
@@ -19,7 +16,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={inter.className}>
+        <body className="min-h-screen">
           <Header />
           <Providers>{children}</Providers>
         </body>

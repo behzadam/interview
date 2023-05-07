@@ -8,9 +8,9 @@ const headingFont = Rubik_Moonrocks({
 
 export default function Header() {
   return (
-    <header className="bg-white flex items-center p-5 justify-between border-b-2 border-dashed border-y-cyan-800">
+    <header className="flex items-center justify-between p-5 border-b dark:border-y-gray-800">
       <h1
-        className={`${headingFont.className} font-bold text-2xl text-cyan-800`}
+        className={`${headingFont.className} font-bold text-2xl text-cyan-800 dark:text-gray-50`}
       >
         Enterview!
       </h1>

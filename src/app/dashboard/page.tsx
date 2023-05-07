@@ -1,7 +1,11 @@
 "use client";
 
-import { TodoList, TodoListSkeleton, TodoListToolbar } from "@/features/todo";
-import { useGetTasks } from "@/features/todo/api/get-tasks";
+import {
+  TodoList,
+  TodoListSkeleton,
+  TodoListToolbar,
+  useGetTasks,
+} from "@/features/todo";
 
 export default function DashboardPage() {
   const { data, isFetching } = useGetTasks();

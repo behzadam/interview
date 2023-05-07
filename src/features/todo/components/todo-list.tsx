@@ -6,13 +6,14 @@ type Props = {
   todos?: Todo[];
 };
 export const TodoList = ({ todos }: Props): JSX.Element => {
-  if (!todos) return <PlaceholderNoData />;
+  if (!todos?.length) return <PlaceholderNoData />;
   return (
     <div className="overflow-x-auto">
       <table className="table w-full">
         <thead>
           <tr>
             <th>Text</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
